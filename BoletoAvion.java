@@ -1,21 +1,23 @@
-package Principal;
+package principal.models;
 
 public class BoletoAvion {
+    private boolean requiere;
+    private boolean internacional;
+    private double tarifa; // tarifa calculada
 
-    private boolean requiereBoleto;
-
-    public BoletoAvion(boolean requiereBoleto) {
-        this.requiereBoleto = requiereBoleto;
+    public BoletoAvion(boolean requiere, boolean internacional, double tarifa) {
+        this.requiere = requiere;
+        this.internacional = internacional;
+        this.tarifa = tarifa;
     }
 
     public double calcularCosto() {
-        if (!requiereBoleto) return 0;
-        return 3500; // Ejemplo, precio de un vuelo
+        if (!requiere) return 0.0;
+        return tarifa;
     }
 
     @Override
     public String toString() {
-        return "Requiere Boleto de Avión: " + requiereBoleto +
-                "\nCosto Boleto: $" + calcularCosto();
+        return "BoletoAvion: requiere=" + requiere + ", internacional=" + internacional + ", costo=$" + String.format("%.2f", calcularCosto());
     }
 }
