@@ -14,7 +14,7 @@ public class Principal {
         int identificador = entrada.nextInt();
         entrada.nextLine();
 
-        System.out.println("\nTipo de Solicitud (1=COMISION, 2=CAPACITACION, 3=TRABAJO_CAMPO, 4=OTRO): ");
+        System.out.println("\nTipo de Solicitud (1=COMISION, 2=REPOSICION, 3=LIQUIDACION): ");
         int opcion = entrada.nextInt();
         TipoSolicitud tipo = TipoSolicitud.values()[opcion - 1];
         entrada.nextLine();
